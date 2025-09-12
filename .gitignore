@@ -4,7 +4,7 @@
 local.properties
 *.iml
 
-# Archivos de compilación
+# Carpetas de compilación
 /build/
 app/build/
 */build/
@@ -13,15 +13,6 @@ app/build/
 .DS_Store
 Thumbs.db
 
-# Archivos generados por logs
-*.log
-
-# Archivos de caché
+# Archivos de caché y logs
 .cxx/
-*.apk
-*.ap_
-*.dex
-*.class
-
-# Archivos de configuración del usuario
-captures/
+*.log
