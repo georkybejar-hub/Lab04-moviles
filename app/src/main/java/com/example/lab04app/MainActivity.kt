@@ -161,3 +161,30 @@ fun ViewCardDatos() {
         }
     }
 }
+@Composable
+fun ViewCheckbox() {
+    var acepto by remember { mutableStateOf(false) }
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(12.dp) // 🔹 espaciado adicional
+    ) {
+        Checkbox(
+            checked = acepto,
+            onCheckedChange = { acepto = it },
+            colors = CheckboxDefaults.colors(
+                checkedColor = MaterialTheme.colorScheme.primary,
+                uncheckedColor = MaterialTheme.colorScheme.outline,
+                checkmarkColor = MaterialTheme.colorScheme.onPrimary
+            )
+        )
+        Spacer(modifier = Modifier.width(8.dp))
+        Text(
+            "Acepto los términos y condiciones",
+            fontSize = 18.sp, // 🔹 tamaño de texto mayor
+            color = if (acepto) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
+        )
+    }
+}
